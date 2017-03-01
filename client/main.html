@@ -1,21 +1,26 @@
 <template name="main">
+
     <head>
         <title>Travelog</title>
     </head>
-    
-    <body>
-      <header>
-        <nav>
-          <a href="{{pathFor route='/'}}">Home</a>
-         <a href="{{pathFor route='cities'}}">Cities</a>
-            {{>loginButtons}}
-          <a href="{{pathFor route='about'}}">About</a>
-          <button>
-            <a href = "{{pathFor route='article'}}">Write Article</a>
-          </button>
 
-        </nav>
-      </header>
+    <body>
+        <header>
+
+            <div class="container-fullwidth">
+                <ul class="nav nav-pills nav-justified" role="tablist">
+                    <li class="active"> <a href="{{pathFor route='/'}}">Home</a></li>
+                    <li><a href="{{pathFor route='cities'}}">Cities</a> </li>
+                    <li><a href="{{pathFor route='about'}}">About</a></li>
+                </ul>
+            </div>
+
+            <button>
+                <a href="{{pathFor route='article'}}">Write Article</a>
+            </button>
+
+            {{>loginButtons}}
+        </header>
         <main>
             {{>yield}}
         </main>
@@ -23,47 +28,46 @@
 </template>
 
 
-<template name ="home">
-its home
-{{>articlesList}}
+<template name="home">
+    its home {{>articlesList}}
 </template>
 
 
-<template name = "city">
-  its city
+<template name="city">
+    its city
 </template>
 
-<template name = "notFound">
-  Template not found
+<template name="notFound">
+    Template not found
 </template>
 
-<template name = "profile">
+<template name="profile">
 </template>
 
 
-<template name = "activity">
-  
+<template name="activity">
+
 </template>
 
-<template name = "cities">
+<template name="cities">
 </template>
 
-<template name = "about">
-  this is about
+<template name="about">
+    this is about
 </template>
 
-<template name = "article">
-  <form>
-        Name of City<input type="text" id="name" placeholder="Name of City"/>
+<template name="article">
+    <form>
+        Name of City
+        <input type="text" id="name" placeholder="Name of City" />
+        <br/> Latitude
+
+        <input type="text" id="latitude" placeholder="latitude" />
+        <br/> Longtitude
+
+        <input type="text" id="latitude" placeholder="latitude" />
         <br/>
 
-        Latitude<input type="text" id="latitude" placeholder="latitude"/>
-        <br/>
-        
-          Longtitude<input type="text" id="latitude" placeholder="latitude"/>
-        <br/>
-        
-        <input type="submit" value="ok"/>
+        <input type="submit" value="ok" />
     </form>
 </template>
- 
