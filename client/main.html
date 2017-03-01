@@ -105,7 +105,24 @@
 
 
 <template name="activity">
-
+    <div id="gallery">
+        {{#each pictures}}
+            <img src="{{this}}"/>
+        {{/each}}
+    </div>
+        <p>{{nature}}</p>
+        <p>{{name}}</p>
+        <p>{{editor._id}}</p>
+        <p>{{description}}</p>
+        
+        <p>Comments</p>
+        {{#each com in comments}}
+            <div>
+                <p>{{com.user._id}}</p>
+                <p>{{com.text}}</p>
+                <p>{{com.date}}</p>
+            </div>
+        {{/each}}
 </template>
 
 <template name="cities">
