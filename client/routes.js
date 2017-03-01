@@ -24,3 +24,11 @@ Router.route('activity', function () {
 Router.route('about', function () {
     this.render('about');          
     });
+
+Router.route('article', function () {
+    this.render('article');          
+    });
+Router.route('cities', function () {
+    this.render('cities');          
+    });
+

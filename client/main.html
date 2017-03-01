@@ -6,13 +6,16 @@
     <body>
       <header>
         <nav>
-          <a href="{{pathFor route='home'}}">Home</a>
+          <a href="{{pathFor route='/'}}">Home</a>
+         <a href="{{pathFor route='cities'}}">Cities</a>
             {{>loginButtons}}
-          <a href="{{pathFor route='city'}}">Cities</a>
-          <a href="">About</a>
+          <a href="{{pathFor route='about'}}">About</a>
+          <button>
+            <a href = "{{pathFor route='article'}}">Write Article</a>
+          </button>
+
         </nav>
       </header>
-      
         <main>
             {{>yield}}
         </main>
@@ -22,7 +25,6 @@
 
 <template name ="home">
 its home
-
 {{>articlesList}}
 </template>
 
@@ -36,7 +38,6 @@ its home
 </template>
 
 <template name = "profile">
-  
 </template>
 
 
@@ -44,11 +45,25 @@ its home
   
 </template>
 
+<template name = "cities">
+</template>
+
 <template name = "about">
-  
+  this is about
 </template>
 
 <template name = "article">
-  
+  <form>
+        Name of City<input type="text" id="name" placeholder="Name of City"/>
+        <br/>
+
+        Latitude<input type="text" id="latitude" placeholder="latitude"/>
+        <br/>
+        
+          Longtitude<input type="text" id="latitude" placeholder="latitude"/>
+        <br/>
+        
+        <input type="submit" value="ok"/>
+    </form>
 </template>
  
