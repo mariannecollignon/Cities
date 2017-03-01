@@ -1,6 +1,10 @@
 Template.city.helpers({
-    Events : function(id){
-        Cities.find({_id:id, nature:"event"});
+    isEvent : function(nature){
+        return nature == 'event';
+    },
+    
+    isPlace : function(nature){
+        return nature == 'place';
     }
 });
     

@@ -40,8 +40,25 @@
     <p>{{name}}</p>
     <p>{{description}}</p>
 
-    <p>Events</p>
-    {{Events (_id) }}
+     <p>Events</p>
+    {{#each act in activities}}
+        {{#if isEvent act.nature}} 
+                <a href="/activity/{{act._id}}" class="articlePreview">
+                    <p>Name:{{act.name}}</p>
+                    <img src="{{act.pictures.[0]}}" alt="{{act.name}}"/>
+                </a>
+        {{/if}}
+    {{/each}}
+    
+    <p>Places</p>
+    {{#each act in activities}}
+        {{#if isPlace act.nature}} 
+                <a href="/activity/{{act._id}}" class="articlePreview">
+                    <p>Name:{{act.name}}</p>
+                    <img src="{{act.pictures.[0]}}" alt="{{act.name}}"/>
+                </a>
+        {{/if}}
+    {{/each}}
 
 </template>
 
