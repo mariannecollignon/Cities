@@ -11,7 +11,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#"><img class="img-responsive" src="/images/LOGO%20TRAVELOG.png" alt="background image" width="
-                        80px"> </a>
+                        80px" min-height="4%"> </a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{pathFor route='/'}}">Home</a></li>
@@ -19,6 +19,9 @@
                         <li><a href="{{pathFor route='about'}}">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <input type="text" name="search" placeholder="Search..">
+                        </li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{>loginButtons}}</a></li>
 
                     </ul>
