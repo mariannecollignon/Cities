@@ -8,12 +8,11 @@ Router.route('/', function () {
     });
 
 
-Router.route('city/:id', function () {
-    this.render('city',{
-        data: function () {
-          return Cities.findOne({_id: this.params._id});
-        }
-    });
+Router.route('city/:id', {
+    template:'city',
+    data: function () {
+      return Cities.findOne({_id: this.params.id});
+    }
 });
 
 

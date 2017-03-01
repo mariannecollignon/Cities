@@ -30,7 +30,12 @@ its home
 
 
 <template name = "city">
-  its city
+    <img src="{{picture}}"/>
+    <p>{{name}}</p>
+    <p>{{description}}</p>
+    
+    <p>Events</p>
+    {{Events (_id) }}
 </template>
 
 <template name = "notFound">
