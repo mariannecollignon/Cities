@@ -33,41 +33,67 @@
 </template>
 
 
+
 <template name="city">
     its city
-</template>
+    <template name="city">
+        <img src="{{picture}}" />
+        <p>{{name}}</p>
+        <p>{{description}}</p>
 
-<template name="notFound">
-    Template not found
-</template>
+        <p>Events</p>
+        {{Events (_id) }}
 
-<template name="profile">
-</template>
+    </template>
+
+    <template name="notFound">
+        Template not found
+    </template>
+
+    <template name="profile">
+    </template>
 
 
-<template name="activity">
+    <template name="activity">
 
-</template>
+    </template>
 
-<template name="cities">
-</template>
+    <template name="cities">
+    </template>
 
-<template name="about">
-    this is about
-</template>
+    <template name="about">
+        this is about
+    </template>
 
-<template name="article">
-    <form>
-        Name of City
-        <input type="text" id="name" placeholder="Name of City" />
-        <br/> Latitude
 
-        <input type="text" id="latitude" placeholder="latitude" />
-        <br/> Longtitude
+    <template name="article">
+        <form>
+            Name of City
+            <input type="text" id="name" placeholder="Name of City" />
+            <br/> Latitude
 
-        <input type="text" id="latitude" placeholder="latitude" />
-        <br/>
+            <input type="text" id="latitude" placeholder="latitude" />
+            <br/> Longtitude
 
-        <input type="submit" value="ok" />
-    </form>
-</template>
+            <input type="text" id="latitude" placeholder="latitude" />
+            <br/>
+
+            <input type="submit" value="ok" />
+        </form>
+    </template>
+
+    <template name="article">
+
+        {{#if currentUser}}
+        <form id="myform" class="addCity">
+            Name of City
+            <input type="text" id="cityName" placeholder="Name of City" />
+            <br/> Latitude
+            <input type="text" id="latitude" placeholder="latitude" />
+            <br/> Longtitude
+            <input type="text" id="longtitude" placeholder="longtitude" />
+            <br/>
+            <input type="submit" value="ok" />
+        </form>
+        {{/if}}
+    </template>
