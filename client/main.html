@@ -58,17 +58,17 @@ its home
 </template>
 
 <template name = "article">
-  <form>
-        Name of City<input type="text" id="name" placeholder="Name of City"/>
+  
+  {{#if currentUser}}
+  <form id = "myform" class = "addCity">
+        Name of City<input type="text" id="cityName" placeholder="Name of City"/>
         <br/>
-
         Latitude<input type="text" id="latitude" placeholder="latitude"/>
         <br/>
-        
-          Longtitude<input type="text" id="latitude" placeholder="latitude"/>
+          Longtitude<input type="text" id="longtitude" placeholder="longtitude"/>
         <br/>
-        
         <input type="submit" value="ok"/>
     </form>
+  {{/if}}
 </template>
  
