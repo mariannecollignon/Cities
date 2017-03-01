@@ -3,7 +3,7 @@ Router.configure({
     notFoundTemplate: "notFound"
 });
 
-Router.route('home', function () {
+Router.route('/', function () {
     this.render('home');          
     });
 
