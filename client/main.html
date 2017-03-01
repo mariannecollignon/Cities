@@ -31,6 +31,8 @@
 
             <button>
                 <a href="{{pathFor route='article'}}">Write Article</a>
+                <a href="{{pathFor route='addActivity'}}">Add Event</a>
+
             </button>
 
 
@@ -67,6 +69,24 @@
 <template name="profile">
 </template>
 
+<template name = "addActivity">
+  
+     <form id="insert" class="addEvent">
+      <br/> Event
+      <input type="text" id="name" placeholder="name" />
+       <br/> Description
+       <input type="text" id="description" placeholder="description" />
+        <br/>Url
+        <input type="text" id="url" placeholder="url" />
+       <br/> Start date
+        <input type = "text" id = "dateStart" placeholder="start date"/>
+        <br/>End date
+        <input type = "text" id = "dateEnd" placeholder="end date"/>
+        <br/>
+        <input type="submit" value="ok" />
+        </form>
+
+</template>
 
 <template name="activity">
 
@@ -85,12 +105,14 @@
     <form id="myform" class="addCity">
         Name of City
         <input type="text" id="cityName" placeholder="Name of City" />
-        <br/> Latitude
+        Latitude<br/> 
         <input type="text" id="latitude" placeholder="latitude" />
-        <br/> Longtitude
+        Longtitude<br/> 
         <input type="text" id="longtitude" placeholder="longtitude" />
         <br/>
         <input type="submit" value="ok" />
     </form>
     {{/if}}
 </template>
+
+

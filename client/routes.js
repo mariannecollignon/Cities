@@ -34,4 +34,8 @@ Router.route('article', function () {
 Router.route('cities', function () {
     this.render('cities');          
     });
+Router.route('addActivity', function () {
+    this.render('addActivity');          
+    });
+
 
