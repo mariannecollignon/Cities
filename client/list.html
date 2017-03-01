@@ -1,0 +1,11 @@
+<template name="articlesList">
+    <p>List of aticles</p>
+    <section id="articleList">
+        {{#each Article}}
+            <div class="articlePreview">
+                <p>{{name}}</p>
+                <img src="{{picture}}"/>
+            </div>
+        {{/each}}
+    </section>
+</template>
