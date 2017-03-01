@@ -2,11 +2,12 @@
     <p>List of aticles</p>
     <section id="articleList">
         {{#each Article}}
-                <a href="/activity/{{act._id}}" class="articlePreview">
-                    <p>{{nature}}</p>
-                    <p>{{name}}</p>
-                    <img src="{{pictures.[0]}}"/>
-                </a>
+        <a href="/activity/{{act._id}}" class="articlePreview">
+            <p>{{nature}}</p>
+            <p>{{name}}</p>
+            <img src="{{pictures.[0]}}" width="
+                        200px" />
+        </a>
         {{/each}}
     </section>
 </template>
