@@ -60,7 +60,7 @@
         {{#if isEvent act.nature}} 
                 <a href="/activity/{{act._id}}" class="articlePreview">
                     <p>Name:{{act.name}}</p>
-                    <img src="{{act.pictures.[0]}}" alt="{{act.name}}"/>
+                    <img src="{{act.picture}}" alt="{{act.name}}"/>
                 </a>
         {{/if}}
     {{/each}}
@@ -70,10 +70,18 @@
         {{#if isPlace act.nature}} 
                 <a href="/activity/{{act._id}}" class="articlePreview">
                     <p>Name:{{act.name}}</p>
-                    <img src="{{act.pictures.[0]}}" alt="{{act.name}}"/>
+                    <img src="{{act.picture}}" alt="{{act.name}}"/>
                 </a>
         {{/if}}
     {{/each}}
+    
+    <p>Map</p>
+    
+    
+    <!--
+    {{> googleMap name="map" options=mapOptions}}
+    -->
+    
 
 </template>
 
@@ -90,6 +98,16 @@
 </template>
 
 <template name="cities">
+    <p>List of cities</p>
+    <section id="cityList">
+        {{#each City}}
+        <a href="/city/{{_id}}" class="cityPreview">
+            <p>{{name}}</p>
+            <img src="{{picture}}" width="
+                        200px" />
+        </a>
+        {{/each}}
+    </section>
 </template>
 
 <template name="about">

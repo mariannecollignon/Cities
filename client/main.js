@@ -1,3 +1,8 @@
+/*Meteor.startup(function() {  
+  GoogleMaps.load();
+});*/
+
+
 Template.city.helpers({
     isEvent : function(nature){
         return nature == 'event';
@@ -5,6 +10,21 @@ Template.city.helpers({
     
     isPlace : function(nature){
         return nature == 'place';
+    },
+    
+    mapOptions: function() {
+        if (GoogleMaps.loaded()) {
+          return {
+            center: new google.maps.LatLng(-37.8136, 144.9631),
+            zoom: 8
+          };
+        }
+      }
+});
+
+Template.cities.helpers({
+    City : function(){
+        return Cities.find();
     }
 });
     
