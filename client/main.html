@@ -3,20 +3,50 @@
 </head>
 
 <body>
-  {{>header}}
-  <h1>Welcome to Meteor!</h1>
-toto
-  {{> hello}}
-  {{>articlesList}}
   
-  
+<template name="main">
+    <head>
+        <title>Visiting Cities !</title>
+    </head>
+    
+      <header>
+  <nav>
+         <a href="{{pathFor route='home'}}">Home</a>
+         <a href="{{pathFor route='header'}}">Login</a>
+         <a href="{{pathFor route='city'}}">Cities</a>
+         <a href="">About</a>
+        </nav>
+       </header>
+         <main>
+             {{>yield}}
+         </main>
+</template>
+ 
+ <template name="header">
+   {{>loginButtons}}
+ </template>
+ 
+ <template name ="home">
+ its home
+ </template>
+ 
+ 
+ <template name = "city">
+   its city
+ </template>
+ 
+ <template name = "notFound">
+   Template not found
+ </template>
+ 
+ <template name = "profile">
+   
+ </template>
+ 
+ 
+ <template name = "activity">
+   
+ </template>
+
+
 </body>
-
-<template name="hello">
-Hello.
-My first template
-</template>
-
-<template name="header">
-  {{>loginButtons}}
-</template>
