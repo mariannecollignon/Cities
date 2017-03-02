@@ -147,7 +147,8 @@
 }
 
 .listsize {
-    max-width: 950px;
+    padding-top: 15px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -162,6 +163,13 @@
     font-family: 'Press Style';
     text-transform: uppercase;
     font-size: 33px;
+    text-align: center;
+}
+
+.listsize h1 {
+    font-family: 'Press Style';
+    text-transform: uppercase;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -210,8 +218,8 @@
     background-color: black;
     padding: 0px;
     margin: 0px;
-    width: 318px;
-    height: 29vh;
+    width: 350px;
+    height: 30vh;
     text-align: center;
     vertical-align: bottom;
     margin-left: auto;
