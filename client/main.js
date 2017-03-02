@@ -1,6 +1,34 @@
+/*Meteor.startup(function() {  
+  GoogleMaps.load();
+});*/
+
+
 Template.city.helpers({
-    Events : function(id){
-        Cities.find({_id:id, nature:"event"});
+    isEvent : function(nature){
+        return nature == 'event';
+    },
+    
+    isPlace : function(nature){
+        return nature == 'place';
+    },
+    
+    mapOptions: function() {
+        if (GoogleMaps.loaded()) {
+          return {
+            center: new google.maps.LatLng(-37.8136, 144.9631),
+            zoom: 8
+          };
+        }
+      }
+});
+
+Template.activity.helpers({
+    
+});
+
+Template.cities.helpers({
+    City : function(){
+        return Cities.find();
     }
 });
     

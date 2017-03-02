@@ -30,10 +30,9 @@
 .navbar {
     font-family: 'BigNoodleTitling';
     background-color: white;
-    height: 4%;
     border: none;
     color: black;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .navbar a {
@@ -43,6 +42,9 @@
 .navbar-right {
     margin-right: 9%;
     font-size: 25px;
+    font-size: 25px;
+    text-decoration: none;
+    border: none;
 }
 
 .navbar-inverse .navbar-text {
@@ -51,9 +53,9 @@
 
 .navbar-inverse .navbar-nav > li > a {
     color: black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    min-width: 10%
+    min-width: 150px;
+    border-right: 1px solid grey;
+    min-width: 10%;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -76,22 +78,45 @@
     background-color: transparent;
 }
 
-.input[type=text] {
-    width: 30px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+.navbar-brand {
+    background-color: white;
+}
+
+#logo {
+    max-height: 60px;
 }
 
 
-/* When the input field gets focus, change its width to 100% */
-
-input[type=text]:focus {
-    width: 100%;
-}
+/********** search box *************/
 
 
 /********************** MAIN BACKGROUND ******************/
 
 #mainbackground {
     margin-top: -4%;
+}
+
+#div1 {
+    position: relative;
+}
+
+#div2 {
+    z-index: 1;
+    position: absolute;
+    min-width: 15px;
+    min-height: 20px;
+    left: 70%;
+    top: 10%;
+}
+
+.btn-danger {
+    font-family: 'BigNoodleTitling';
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+.btn-danger a {
+    text-decoration: none;
+    color: white;
 }

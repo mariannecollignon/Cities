@@ -9,32 +9,46 @@
 
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#"><img class="img-responsive" src="/images/LOGO%20TRAVELOG.png" alt="background image" width="
-                        80px" min-height="4%"> </a>
-                    </div>
+
                     <ul class="nav navbar-nav">
+                        <li><img class="img-responsive" id="logo" src="/images/LOGO%20TRAVELOG1.png" alt="background image"> </li>
                         <li class="active"><a href="{{pathFor route='/'}}">Home</a></li>
+
                         <li><a href="{{pathFor route='cities'}}">Cities</a> </li>
                         <li><a href="{{pathFor route='about'}}">About</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <input type="text" name="search" placeholder="Search..">
+                            <form class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+
                         </li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{>loginButtons}}</a></li>
 
                     </ul>
                 </div>
             </nav>
-            <img class="img-responsive" id="mainbackground" src="/images/mainbackground.png" alt="background image">
 
             <button>
                 <a href="{{pathFor route='article'}}">Write Article</a>
                 <a href="{{pathFor route='addActivity'}}">Add Event</a>
 
             </button>
+            <div id="div1">
+                <img class="img-responsive" id="mainbackground" src="/images/mainbackground.png" alt="background image">
 
+                <div id="div2">
+                    <button type="button" class="btn btn-danger">
+                        <a href="{{pathFor route='article'}}">Write Article</a>
+                    </button>
+                </div>
+            </div>
 
         </header>
         <main>
@@ -57,8 +71,33 @@
     <p>{{name}}</p>
     <p>{{description}}</p>
 
-    <p>Events</p>
-    {{Events (_id) }}
+     <p>Events</p>
+    {{#each act in activities}}
+        {{#if isEvent act.nature}} 
+                <a href="/activity/{{act._id}}" class="articlePreview">
+                    <p>Name:{{act.name}}</p>
+                    <img src="{{act.picture}}" alt="{{act.name}}"/>
+                </a>
+        {{/if}}
+    {{/each}}
+    
+    <p>Places</p>
+    {{#each act in activities}}
+        {{#if isPlace act.nature}} 
+                <a href="/activity/{{act._id}}" class="articlePreview">
+                    <p>Name:{{act.name}}</p>
+                    <img src="{{act.picture}}" alt="{{act.name}}"/>
+                </a>
+        {{/if}}
+    {{/each}}
+    
+    <p>Map</p>
+    
+    
+    <!--
+    {{> googleMap name="map" options=mapOptions}}
+    -->
+    
 
 </template>
 
@@ -89,10 +128,37 @@
 </template>
 
 <template name="activity">
-
+    <div id="gallery">
+        {{#each pictures}}
+            <img src="{{this}}"/>
+        {{/each}}
+    </div>
+        <p>{{nature}}</p>
+        <p>{{name}}</p>
+        <p>{{editor._id}}</p>
+        <p>{{description}}</p>
+        
+        <p>Comments</p>
+        {{#each com in comments}}
+            <div>
+                <p>{{com.user._id}}</p>
+                <p>{{com.text}}</p>
+                <p>{{com.date}}</p>
+            </div>
+        {{/each}}
 </template>
 
 <template name="cities">
+    <p>List of cities</p>
+    <section id="cityList">
+        {{#each City}}
+        <a href="/city/{{_id}}" class="cityPreview">
+            <p>{{name}}</p>
+            <img src="{{picture}}" width="
+                        200px" />
+        </a>
+        {{/each}}
+    </section>
 </template>
 
 <template name="about">
@@ -105,9 +171,9 @@
     <form id="myform" class="addCity">
         Name of City
         <input type="text" id="cityName" placeholder="Name of City" />
-        Latitude<br/> 
+        <br/> Latitude
         <input type="text" id="latitude" placeholder="latitude" />
-        Longtitude<br/> 
+        <br/> Longtitude
         <input type="text" id="longtitude" placeholder="longtitude" />
         <br/>
         <input type="submit" value="ok" />
