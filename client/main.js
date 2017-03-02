@@ -69,3 +69,9 @@ Template.addActivity.events({
     });
    }
 });
+
+Template.profile.helpers({
+    Activity : function(){
+        return Activities.find();
+    }
+});

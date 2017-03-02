@@ -37,9 +37,8 @@
 
             <button>
                 <a href="{{pathFor route='article'}}">Write Article</a>
-                <a href="{{pathFor route='addActivity'}}">Add Event</a>
-
             </button>
+           
             <div id="div1">
                 <img class="img-responsive" id="mainbackground" src="/images/mainbackground.png" alt="background image">
 
@@ -49,7 +48,9 @@
                     </button>
                 </div>
             </div>
-
+            <button>
+                <a href="{{pathFor route='profile'}}">Profile</a>
+            </button>
         </header>
         <main>
             {{>yield}}
@@ -62,9 +63,6 @@
 <template name="home">
     its home {{>articlesList}}
 </template>
-
-
-
 
 <template name="city">
     <img src="{{picture}}" />
@@ -97,8 +95,11 @@
     <!--
     {{> googleMap name="map" options=mapOptions}}
     -->
-    
 
+</template>
+
+<template name ="map">
+        {{> googleMap name="map" options=mapOptions}}
 </template>
 
 <template name="notFound">
@@ -106,6 +107,13 @@
 </template>
 
 <template name="profile">
+      <p>Your articles are</p>
+    {{#if currentUser}}
+   {{#each Activity}}
+        <a href="/activity/{{_id}}" class="articlePreview">
+        <p>{{name}}</p>
+        </a> {{/each}}
+        {{/if}}
 </template>
 
 <template name = "addActivity">
@@ -172,10 +180,11 @@
 </template>
 
 <template name="about">
-    this is about
 </template>
 
 <template name="article">
+    
+    {{>addActivity}}
 
     {{#if currentUser}}
     <form id="myform" class="addCity">

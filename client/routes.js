@@ -15,7 +15,6 @@ Router.route('city/:id', {
     }
 });
 
-
 Router.route('profile', function() {
     this.render('profile');          
     });
