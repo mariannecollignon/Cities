@@ -15,7 +15,6 @@ Router.route('city/:id', {
     }
 });
 
-
 Router.route('profile', function() {
     this.render('profile');          
     });
@@ -37,4 +36,8 @@ Router.route('article', function () {
 Router.route('cities', function () {
     this.render('cities');          
     });
+Router.route('addActivity', function () {
+    this.render('addActivity');          
+    });
+
 
