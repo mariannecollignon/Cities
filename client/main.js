@@ -23,12 +23,26 @@ Template.city.helpers({
 });
 
 Template.activity.events({
-    'submit.addComment' : function(event){
+    'click .addComment #addcomment' : function(event){
         var comment = $('#comment').val();
         var id = $('#id').val();
+        
+        console.log(id);
         Activities.update(
             {_id: id},
-            {$set}
+            {$push:{comments:
+                        {
+                        "user" : {
+                            "_id" : "u0",
+                            "email" : "derek@dkit.ie"
+                            },
+                        "date" : "today",
+                        "text" : comment
+                        }                
+                }
+            
+            }
+        
         );
     }
 });
