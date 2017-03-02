@@ -75,3 +75,4 @@ Template.profile.helpers({
         return Activities.find();
     }
 });
+
