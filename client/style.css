@@ -87,7 +87,25 @@
 }
 
 
-/********** search box *************/
+/* SCROLLBARE */
+
+::-webkit-scrollbar {
+    width: 5px;
+    /*largeur de la scrollbar verticale*/
+    height: 5px;
+    /*hauteur de la scrollbar horizontale*/
+    background-color: #101010;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+    /*couleur du fond de la scrollbar*/
+}
+
+::-webkit-scrollbar-thumb {
+    /*la petite bande qui monte/descend*/
+    background-color: #101010;
+}
 
 
 /********************** MAIN BACKGROUND ******************/
