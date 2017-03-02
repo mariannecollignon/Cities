@@ -29,14 +29,14 @@ Template.activity.events({
         
         console.log(id);
         Activities.update(
-            {_id: id},
+            {_id: Template.currentData()._id},
             {$push:{comments:
                         {
                         "user" : {
-                            "_id" : "u0",
-                            "email" : "derek@dkit.ie"
+                            "_id" : Meteor.user()._id,
+                            "email" : Meteor.user().emails[0].adress
                             },
-                        "date" : "today",
+                        "date" : new Date(),
                         "text" : comment
                         }                
                 }
@@ -82,6 +82,19 @@ Template.addActivity.events({
         name : name,description :description, url : url,dateStart:dateStart,dateEnd: dateEnd
     });
    }
+});
+
+Template.addActivity.helpers({
+    City : function(){
+        return Cities.find();
+    },
+    isEvent : function(){
+        var e = document.getElementById("type");
+        var type = e.options[e.selectedIndex].value;
+        
+        return type == 'event';
+    }
+    
 });
 
 Template.profile.helpers({

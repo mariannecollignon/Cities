@@ -43,7 +43,7 @@
 
                 <div id="div2">
                     <button type="button" class="btn btn-danger">
-                        <a href="{{pathFor route='article'}}">Write Article</a>
+                        <a href="/article">Write Article</a>
                     </button>
                 </div>
             </div>            
@@ -116,16 +116,30 @@
 <template name = "addActivity">
     <h3>Write an article</h3>
      <form id="insert" class="addEvent">
-        <br/> <label>Event</label>
-        <input type="text" id="name" placeholder="name" />
-         <br/> <label>Description</label>
-         <textarea id="description" placeholder="description" ></textarea>
-          <br/><label>Url</label>
-          <input type="text" id="url" placeholder="url" />
-         <br/> <label>Start date</label>
-          <input type="date"  id = "dateStart" placeholder="start date"/>
-          <br/><label>End date</label>
-          <input type ="date" id = "dateEnd" placeholder="end date"/>
+        <br/> <label>In wich city is it ?</label>
+        <select>
+            {{#each City}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br/> <label>What is it about ?</label>
+        <select id="type">
+            <option value="event">An event</option>
+            <option value="place">A place</option>
+        </select>
+        
+        <br/> <label>Your title</label>
+        <input type="text" id="name" placeholder="title" />
+        <br/> <label>Your article</label>
+        <textarea id="description" placeholder="write your article there" ></textarea>
+        <br/><label>Url</label>
+        <input type="text" id="url" placeholder="url" />
+          
+        <br/> <label>Start date</label>
+        <input type="date"  id = "dateStart" placeholder="start date"/>
+        <br/><label>End date</label>
+        <input type ="date" id = "dateEnd" placeholder="end date"/>
+          
           <br/>
           <br/>
           <input type="submit" value="ok" />

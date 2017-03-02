@@ -36,9 +36,12 @@ Router.route('about', function () {
 Router.route('article', function () {
     this.render('article');          
     });
+
 Router.route('cities', function () {
     this.render('cities');          
     });
+
+
 Router.route('addActivity', function () {
     this.render('addActivity');          
     });
