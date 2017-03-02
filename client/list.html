@@ -1,28 +1,58 @@
 <template name="articlesList">
-    <p>List of aticles</p>
-    <section id="articleList">
-        {{#each Article}}
+    <div class="listsize">
 
-        <div class="col-sm-4">
-            <div class="row">
+        <div class="row">
+            <div class="col-sm-4"><img class="img-responsive" src="/images/avion.png" alt="">
+                <br>
+                <h2>Travel </h2>
 
-                <div class="container">
-                    <img src="{{pictures.[0]}}" width="100%" alt="Avatar" class="image">
-
-                    <div class="middle">
-                        <div class="text">
-                            <a href="/activity/{{_id}}" class="articlePreview">
-                                <p>{{nature}}</p>
-                                <p>{{name}}</p>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias rem. </p>
+                <br>
             </div>
-        </div>
+            <div class="col-sm-4"><img class="img-responsive" src="/images/earth.png" alt="">
+                <br>
+                <h2>Visit </h2>
 
-        {{/each}}
-    </section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias rem. </p>
+                <br>
+            </div>
+            <div class="col-sm-4"><img class="img-responsive" src="/images/boat.png" alt="">
+                <br>
+                <h2>Enjoy </h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias rem. </p>
+                <br>
+            </div>
+
+        </div>
+        <section id="articleList">
+            {{#each Article}}
+
+            <div class="col-lg-4">
+                <div class="row imagetiles">
+
+
+                    <div class="container-fluid">
+                        <div class="image-block col-lg-4" style="background: url({{pictures.[0]}}) no-repeat center top;background-size:cover;">
+                            <p>
+                                <a href="/activity/{{_id}}" class="articlePreview">
+                                    <p>{{nature}}</p>
+                                    <p>{{name}}</p>
+
+                                </a>
+                            </p>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            {{/each}}
+        </section>
+
+    </div>
 </template>

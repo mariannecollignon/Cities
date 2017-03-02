@@ -3,9 +3,12 @@ Router.configure({
     notFoundTemplate: "notFound"
 });
 
-Router.route('/', function () {
-    this.render('home');          
-    });
+Router.route(
+        '/', {
+            name: 'Home'
+        }
+);
+
 
 
 Router.route('city/:id', {

@@ -12,7 +12,7 @@
 
                     <ul class="nav navbar-nav">
                         <li><img class="img-responsive" id="logo" src="/images/LOGO%20TRAVELOG1.png" alt="background image"> </li>
-                        <li class="active"><a href="{{pathFor route='/'}}">Home</a></li>
+                        <li class="active"><a href="{{pathFor route='Home'}}">Home</a></li>
 
                         <li><a href="{{pathFor route='cities'}}">Cities</a> </li>
                         {{#if currentUser}}
@@ -104,6 +104,7 @@
 
 <template name="profile">
       <p>Your articles are</p>
+
     {{#if currentUser}}
    {{#each Activity}}
         <a href="/activity/{{_id}}" class="articlePreview">
