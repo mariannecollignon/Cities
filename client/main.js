@@ -22,8 +22,15 @@ Template.city.helpers({
       }
 });
 
-Template.activity.helpers({
-    
+Template.activity.events({
+    'submit.addComment' : function(event){
+        var comment = $('#comment').val();
+        var id = $('#id').val();
+        Activities.update(
+            {_id: id},
+            {$set}
+        );
+    }
 });
 
 Template.cities.helpers({
