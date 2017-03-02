@@ -22,6 +22,10 @@ Template.city.helpers({
       }
 });
 
+Template.activity.helpers({
+    
+});
+
 Template.cities.helpers({
     City : function(){
         return Cities.find();

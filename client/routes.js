@@ -16,12 +16,15 @@ Router.route('city/:id', {
 });
 
 
-Router.route('profile', function () {
+Router.route('profile', function() {
     this.render('profile');          
     });
 
-Router.route('activity', function () {
-    this.render('activity');          
+Router.route('activity/:id', {
+    template:'activity',
+    data: function () {
+      return Activities.findOne({_id: this.params.id});
+    }         
     });
 
 Router.route('about', function () {
