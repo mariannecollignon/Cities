@@ -108,14 +108,14 @@
 </template>
 
 <template name="addActivity">
-
+    <h3>Write an article</h3>
     <form id="insert" class="addEvent">
         <br/>
         <label>Event</label>
         <input type="text" id="name" placeholder="name" />
         <br/>
         <label>Description</label>
-        <input type="text" id="description" placeholder="description" />
+        <textarea id="description" placeholder="description"></textarea>
         <br/>
         <label>Url</label>
         <input type="text" id="url" placeholder="url" />
@@ -125,6 +125,7 @@
         <br/>
         <label>End date</label>
         <input type="date" id="dateEnd" placeholder="end date" />
+        <br/>
         <br/>
         <input type="submit" value="ok" />
     </form>
@@ -183,6 +184,7 @@
         </div>
 
         <div class="col-md-4 col-md-offset-1">
+            <h3>Add a city</h3>
             <p>Please, check if the city doesn't already exists before creating a new one.</p>
             <form id="myform" class="addCity">
                 <label>Name of City</label>
@@ -195,7 +197,8 @@
                 <input type="text" id="longtitude" placeholder="longtitude" />
                 <br/>
                 <label>Write a description</label>
-                <textarea id="cityDescription" placeholder="your description"></textarea>
+                <textarea id="cityDescription" placeholder="your description of this city"></textarea>
+                <br/>
                 <br/>
                 <input type="submit" value="ok" />
             </form>
