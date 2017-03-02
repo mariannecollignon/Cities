@@ -146,6 +146,16 @@
                 <p>{{com.date}}</p>
             </div>
         {{/each}}
+        
+        {{#if currentUser}}
+        <form class="addComment">
+            <label>Write your comment</label>
+            <input type="hidden" id="id" value={{_id}}/>
+            <textarea id="comment"></textarea>
+            <input type="submit" value="Submit"/>
+        </form>
+        {{/if}}
+        
 </template>
 
 <template name="cities">
