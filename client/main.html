@@ -46,18 +46,20 @@
                         <a href="/article">Write Article</a>
                     </button>
                 </div>
-            </div>            
+            </div>
         </header>
         <main>
             {{>yield}}
+
         </main>
+
     </body>
 
 </template>
 
 
 <template name="home">
-    its home {{>articlesList}}
+    {{>articlesList}}
 </template>
 
 <template name="city">
@@ -65,37 +67,33 @@
     <p>{{name}}</p>
     <p>{{description}}</p>
 
-     <p>Events</p>
-    {{#each act in activities}}
-        {{#if isEvent act.nature}} 
-                <a href="/activity/{{act._id}}" class="articlePreview">
-                    <p>Name:{{act.name}}</p>
-                    <img src="{{act.picture}}" alt="{{act.name}}"/>
-                </a>
-        {{/if}}
-    {{/each}}
-    
+    <p>Events</p>
+    {{#each act in activities}} {{#if isEvent act.nature}}
+    <a href="/activity/{{act._id}}" class="articlePreview">
+        <p>Name:{{act.name}}</p>
+        <img src="{{act.picture}}" alt="{{act.name}}" />
+    </a>
+    {{/if}} {{/each}}
+
     <p>Places</p>
-    {{#each act in activities}}
-        {{#if isPlace act.nature}} 
-                <a href="/activity/{{act._id}}" class="articlePreview">
-                    <p>Name:{{act.name}}</p>
-                    <img src="{{act.picture}}" alt="{{act.name}}"/>
-                </a>
-        {{/if}}
-    {{/each}}
-    
+    {{#each act in activities}} {{#if isPlace act.nature}}
+    <a href="/activity/{{act._id}}" class="articlePreview">
+        <p>Name:{{act.name}}</p>
+        <img src="{{act.picture}}" alt="{{act.name}}" />
+    </a>
+    {{/if}} {{/each}}
+
     <p>Map</p>
-    
-    
+
+
     <!--
     {{> googleMap name="map" options=mapOptions}}
     -->
 
 </template>
 
-<template name ="map">
-        {{> googleMap name="map" options=mapOptions}}
+<template name="map">
+    {{> googleMap name="map" options=mapOptions}}
 </template>
 
 <template name="notFound">
@@ -103,18 +101,17 @@
 </template>
 
 <template name="profile">
-      <p>Your articles are</p>
+    <p>Your articles are</p>
 
-    {{#if currentUser}}
-   {{#each Activity}}
-        <a href="/activity/{{_id}}" class="articlePreview">
+    {{#if currentUser}} {{#each Activity}}
+    <a href="/activity/{{_id}}" class="articlePreview">
         <p>{{name}}</p>
-        </a> {{/each}}
-        {{/if}}
+    </a> {{/each}} {{/if}}
 </template>
 
-<template name = "addActivity">
+<template name="addActivity">
     <h3>Write an article</h3>
+
      <form id="insert" class="addEvent">
         <br/> <label>In wich city is it ?</label>
         <select>
@@ -128,6 +125,7 @@
             <option value="place">A place</option>
         </select>
         
+        
         <br/> <label>Your title</label>
         <input type="text" id="name" placeholder="title" />
         <br/> <label>Your article</label>
@@ -140,9 +138,11 @@
         <br/><label>End date</label>
         <input type ="date" id = "dateEnd" placeholder="end date"/>
           
+          
           <br/>
           <br/>
           <input type="submit" value="ok" />
+
     </form>
 
 </template>
@@ -150,32 +150,29 @@
 <template name="activity">
     <div id="gallery">
         {{#each pictures}}
-            <img src="{{this}}"/>
-        {{/each}}
+        <img src="{{this}}" /> {{/each}}
     </div>
-        <p>{{nature}}</p>
-        <p>{{name}}</p>
-        <p>{{editor._id}}</p>
-        <p>{{description}}</p>
-        
-        <p>Comments</p>
-        {{#each com in comments}}
-            <div>
-                <p>{{com.user._id}}</p>
-                <p>{{com.text}}</p>
-                <p>{{com.date}}</p>
-            </div>
-        {{/each}}
-        
-        {{#if currentUser}}
-        <form class="addComment">
-            <label>Write your comment ! </label>
-            <input type="hidden" id="id" value={{_id}}/>
-            <textarea id="comment"></textarea>
-            <input type="button" id="addcomment" value="Submit"/>
-        </form>
-        {{/if}}
-        
+    <p>{{nature}}</p>
+    <p>{{name}}</p>
+    <p>{{editor._id}}</p>
+    <p>{{description}}</p>
+
+    <p>Comments</p>
+    {{#each com in comments}}
+    <div>
+        <p>{{com.user._id}}</p>
+        <p>{{com.text}}</p>
+        <p>{{com.date}}</p>
+    </div>
+    {{/each}} {{#if currentUser}}
+    <form class="addComment">
+        <label>Write your comment ! </label>
+        <input type="hidden" id="id" value={{_id}}/>
+        <textarea id="comment"></textarea>
+        <input type="button" id="addcomment" value="Submit" />
+    </form>
+    {{/if}}
+
 </template>
 
 <template name="cities">
@@ -196,35 +193,33 @@
 
 <template name="article">
     <div class="row">
-    {{#if currentUser}}
-    <div class="col-md-5 col-md-offset-1">
-        {{>addActivity}}
+        {{#if currentUser}}
+        <div class="col-md-5 col-md-offset-1">
+            {{>addActivity}}
+        </div>
+
+        <div class="col-md-4 col-md-offset-1">
+            <h3>Add a city</h3>
+            <p>Please, check if the city doesn't already exists before creating a new one.</p>
+            <form id="myform" class="addCity">
+                <label>Name of City</label>
+                <input type="text" id="cityName" placeholder="Name of City" />
+                <br/>
+                <label>Latitude</label>
+                <input type="text" id="latitude" placeholder="latitude" />
+                <br/>
+                <label>Longtitude</label>
+                <input type="text" id="longtitude" placeholder="longtitude" />
+                <br/>
+                <label>Write a description</label>
+                <textarea id="cityDescription" placeholder="your description of this city"></textarea>
+                <br/>
+                <br/>
+                <input type="submit" value="ok" />
+            </form>
+        </div>
+        {{/if}}
+
     </div>
-    
-    <div class="col-md-4 col-md-offset-1">
-        <h3>Add a city</h3>
-        <p>Please, check if the city doesn't already exists before creating a new one.</p>
-        <form id="myform" class="addCity">
-            <label>Name of City</label>
-            <input type="text" id="cityName" placeholder="Name of City" />
-            <br/>
-            <label>Latitude</label>
-            <input type="text" id="latitude" placeholder="latitude" />
-            <br/>
-            <label>Longtitude</label>
-            <input type="text" id="longtitude" placeholder="longtitude" />
-            <br/>
-            <label>Write a description</label>
-            <textarea id="cityDescription" placeholder="your description of this city"></textarea>
-            <br/>
-            <br/>
-            <input type="submit" value="ok" />
-        </form>
-    </div>
-    {{/if}}
-    
-    </div>
-    
+
 </template>
-
-
