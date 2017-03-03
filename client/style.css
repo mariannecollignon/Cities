@@ -109,6 +109,12 @@
             z-index: 1;
             top: -72px;
         }
+        
+        @media (max-width: 800px) {
+            .div2 {
+                opacity: 0;
+            }
+        }
         /* SCROLLBARE */
         
         ::-webkit-scrollbar {
@@ -387,12 +393,18 @@
             background-color: black;
             padding: 0px;
             margin: 0px;
-            width: 958px !important;
+            width: 50vw !important;
             height: 440px;
             text-align: center;
             vertical-align: bottom;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        @media (max-width: 1206px) {
+            .image-block1 {
+                width: 99vw !important;
+            }
         }
         
         h1 {
@@ -437,10 +449,4 @@
         
         .mapcity {
             height: 350px;
-        }
-        
-        @media (max-width: 800px) {
-            .div2 {
-                opacity: 0;
-            }
         }
