@@ -62,15 +62,25 @@
 </template>
 
 <template name="city">
-    <img src="{{picture}}" />
-    <p>{{name}}</p>
-    <p>{{description}}</p>
+
+
+    <div class="row">
+        <div class="col-sm-4"><img src="{{picture}}" width="500px" /></div>
+        <div class="col-sm-8" id="catspart1txt">
+            <p>{{name}}</p>
+            <p>{{description}}</p>
+        </div>
+    </div>
+
+
+
+
 
     <p>Events</p>
     {{#each act in activities}} {{#if isEvent act.nature}}
     <a href="/activity/{{act._id}}" class="articlePreview">
         <p>Name:{{act.name}}</p>
-        <img src="{{act.picture}}" alt="{{act.name}}" />
+        <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
     </a>
     {{/if}} {{/each}}
 
@@ -78,13 +88,13 @@
     {{#each act in activities}} {{#if isPlace act.nature}}
     <a href="/activity/{{act._id}}" class="articlePreview">
         <p>Name:{{act.name}}</p>
-        <img src="{{act.picture}}" alt="{{act.name}}" />
+        <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
     </a>
     {{/if}} {{/each}}
 
     <p>Map</p>
 
-{{>map}}
+    {{>map}}
 
     <!--
     {{> googleMap name="map" options=mapOptions}}
@@ -93,9 +103,9 @@
 </template>
 
 <template name="map">
-  <div class="map-container">
-    {{> googleMap name="map" options=mapOptions}}
-  </div>
+    <div class="map-container">
+        {{> googleMap name="map" options=mapOptions}}
+    </div>
 </template>
 
 <template name="notFound">
@@ -257,16 +267,47 @@
 </template>
 
 <template name="cities">
-    <p>List of cities</p>
+
+    <br>
+    <br>
+
+
+    <h1>List of cities</h1>
+    <p id="citiesp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi vero laborum, blanditiis atque. Ullam aspernatur quo temporibus repudiandae porro, culpa, doloribus, officia quidem corporis consectetur error natus, rem nihil!</p>
     <section id="cityList">
-        {{#each City}}
-        <a href="/city/{{_id}}" class="cityPreview">
-            <p>{{name}}</p>
-            <img src="{{picture}}" width="
-                        200px" />
-        </a>
-        {{/each}}
+        <div class="cityList1">
+            {{#each City}}
+
+            <div class="col-lg-6">
+                <div class="row imagetiles">
+
+
+                    <div class="container-fluid">
+                        <div class="hovereffect">
+                            <div class="image-block1 col-lg-6" style="background: url({{picture}}) no-repeat center top;background-size:cover;">
+                                <div class="overlay">
+                                    <p>
+                                        <a href="/city/{{_id}}" class="cityPreview">
+                                            <p>{{name}}</p>
+                                        </a>
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            {{/each}}
+        </div>
     </section>
+
 </template>
 
 <template name="about">
