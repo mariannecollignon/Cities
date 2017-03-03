@@ -103,16 +103,25 @@
 </template>
 
 <template name="profile">
-    <p>User : </p>
-    <p>Email : {{currentUser.mail}}</p>
+    <div class="row" id="profile">
+        <div class="col-md-4 col-md-offset-1" id="userInfo">
+            <h1>Your infos</h1>
+            <p>User :<!-- {{Meteor.user()._id}}--></p>
+            <p>Email : </p>
+        </div>
     
-    <p>Your articles are</p>
+        <div class="col-md-5 col-md-offset-1">
+            <h1>Your articles</h1>
 
-    {{#if currentUser}} {{#each Activity}}
-    <a href="/activity/{{_id}}" class="articlePreview">
-        <p>{{name}}</p>
-        <p>{{#City _id}}{{name}}{{/City}}</p>
-    </a> {{/each}} {{/if}}
+            {{#if currentUser}} {{#each Activity}}
+            <a href="/activity/{{_id}}" class="articlePreview">
+                <p class="nature">{{nature}} in {{City _id}}</p>
+                <h2>{{name}}</h2>
+                <!--<p>{{City _id}}</p>-->
+            </a> {{/each}} {{/if}}
+        </div>
+    
+    </div>
 </template>
 
 <template name="addActivity">
