@@ -47,6 +47,10 @@
     border: none;
 }
 
+.navbar-left {
+    margin-left: 8%
+}
+
 .navbar-inverse .navbar-text {
     color: black;
 }
@@ -83,7 +87,16 @@
 }
 
 #logo {
-    max-height: 60px;
+    max-height: 100px;
+}
+
+#writeartibtn a {
+    color: #cc6c11 !important;
+}
+
+.div2 {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -114,19 +127,6 @@
     margin-top: -4%;
 }
 
-#div1 {
-    position: relative;
-}
-
-#div2 {
-    z-index: 1;
-    position: absolute;
-    min-width: 15px;
-    min-height: 20px;
-    left: 70%;
-    top: 10%;
-}
-
 .btn-danger {
     font-family: 'BigNoodleTitling';
     color: white;
@@ -146,7 +146,8 @@
     padding: 0px;
 }
 
-.listsize {
+.listsize,
+#gallery {
     padding-top: 15px;
     max-width: 1000px;
     margin-left: auto;
@@ -318,6 +319,71 @@
 
 /***************** actibity ****************/
 
-#gallery img {
-    width: 300px;
+.textactivity {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Century Gothic';
+    text-align: justify;
+    font-size: 14px;
+    padding: 1%;
+    border-bottom: 6px #bf6b1b solid;
+}
+
+.textactivity h1 {
+    font-family: 'Press Style';
+    text-transform: uppercase;
+    font-size: 59px;
+    text-align: center;
+}
+
+#galleryacti {
+    border: 3px solid blue !important;
+}
+
+#nature {
+    text-align: center;
+    font-family: century gothic;
+    border: none;
+    color: black;
+    font-size: 22px;
+}
+
+#editor {
+    text-align: right;
+    font-style: italic;
+}
+
+#gallery {
+    padding: 5px !important;
+}
+
+#galleryacti {
+    width: 17vw;
+}
+
+.commentmain {
+    font-family: 'BigNoodleTitling';
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 45px;
+}
+
+.commentaireround {
+    background-color: #dfccb6;
+    margin: 5%;
+    padding: 2%;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+
+#comauthor {
+    font-family: 'BigNoodleTitling';
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+#comdate {
+    text-align: right;
+    font-style: italic;
 }
