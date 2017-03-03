@@ -129,8 +129,6 @@ Template.profile.helpers({
     }
 });
 
-<<<<<<< HEAD
-=======
 Meteor.startup(function() {
     GoogleMaps.load();
   });
@@ -157,4 +155,3 @@ Template.city.onCreated(function() {
       console.log("I'm ready!");
       });
      });
->>>>>>> 61cbb4d74a26339a03efdcc00fa93241f5a0ea1d
