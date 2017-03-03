@@ -97,6 +97,7 @@
 .div2 {
     position: relative;
     z-index: 1;
+    top: -72px;
 }
 
 
@@ -124,19 +125,7 @@
 /********************** MAIN BACKGROUND ******************/
 
 #mainbackground {
-    margin-top: -4%;
-}
-
-.btn-danger {
-    font-family: 'BigNoodleTitling';
-    color: white;
-    font-size: 25px;
-    padding: 10px 20px;
-}
-
-.btn-danger a {
-    text-decoration: none;
-    color: white;
+    margin-top: -6%;
 }
 
 
