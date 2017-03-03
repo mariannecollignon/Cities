@@ -62,44 +62,44 @@
 </template>
 
 <template name="city">
+    <div class="city1">
 
-
-    <div class="row">
-        <div class="col-sm-4"><img src="{{picture}}" width="500px" /></div>
-        <div class="col-sm-8" id="catspart1txt">
-            <p>{{name}}</p>
-            <p>{{description}}</p>
+        <div class="row">
+            <div class="col-sm-4"><img src="{{picture}}" class="img responsive" /></div>
+            <div class="col-sm-8" id="catspart1txt">
+                <p>{{name}}</p>
+                <p>{{description}}</p>
+            </div>
         </div>
-    </div>
 
 
 
 
 
-    <p>Events</p>
-    {{#each act in activities}} {{#if isEvent act.nature}}
-    <a href="/activity/{{act._id}}" class="articlePreview">
-        <p>Name:{{act.name}}</p>
-        <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
-    </a>
-    {{/if}} {{/each}}
+        <p>Events</p>
+        {{#each act in activities}} {{#if isEvent act.nature}}
+        <a href="/activity/{{act._id}}" class="articlePreview">
+            <p>Name:{{act.name}}</p>
+            <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
+        </a>
+        {{/if}} {{/each}}
 
-    <p>Places</p>
-    {{#each act in activities}} {{#if isPlace act.nature}}
-    <a href="/activity/{{act._id}}" class="articlePreview">
-        <p>Name:{{act.name}}</p>
-        <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
-    </a>
-    {{/if}} {{/each}}
+        <p>Places</p>
+        {{#each act in activities}} {{#if isPlace act.nature}}
+        <a href="/activity/{{act._id}}" class="articlePreview">
+            <p>Name:{{act.name}}</p>
+            <img src="{{act.picture}}" alt="{{act.name}}" width="500px" />
+        </a>
+        {{/if}} {{/each}}
 
-    <p>Map</p>
+        <p>Map</p>
 
-    {{>map}}
+        {{>map}}
 
-    <!--
+        <!--
     {{> googleMap name="map" options=mapOptions}}
     -->
-
+    </div>
 </template>
 
 <template name="map">
