@@ -35,6 +35,15 @@
         .body {
             font-family: 'Century Gothic';
         }
+        
+        a {
+            text-decoration: none !important;
+            color: #754516 !important;
+        }
+        
+        p {
+            font-family: 'Century Gothic';
+        }
         /***************************** NAVIGATION ******************************/
         
         .navbar {
@@ -113,6 +122,11 @@
         @media (max-width: 800px) {
             .div2 {
                 opacity: 0;
+                height: 0px;
+            }
+            #mainbackground {
+                opacity: 0;
+                height: 0px;
             }
         }
         /* SCROLLBARE */
@@ -330,7 +344,12 @@
         }
         
         #galleryacti {
-            border: 3px solid blue !important;
+            border: 3px solid #383732 !important;
+        }
+        
+        #Descpacti {
+            max-width: 853px;
+            margin: auto;
         }
         
         #nature {
@@ -362,8 +381,9 @@
         }
         
         .commentaireround {
-            background-color: #dfccb6;
+            background-color: #464442;
             margin: 5%;
+            color: white;
             padding: 2%;
             -webkit-border-radius: 25px;
             -moz-border-radius: 25px;
