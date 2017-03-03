@@ -61,16 +61,13 @@ Template.article.events({
     var latitude = $("#latitude").val();
     var longtitude = $("#longtitude").val();
     var name = $("#name").val();
-    var description = $("#description").val();
-    var url = $("#url").val();
-    var dateStart = $("#dateStart").val();
-    var dateEnd = $("#dateEnd").val();
-
-    
-    
+    var desc = $("#description").val();    
+    console.log(desc);
     
     Cities.insert({
-        name : cityName,lat :latitude, long : longtitude
+        name : cityName,
+        coordinates : {"long" : longtitude,"lat" : latitude},
+        description : desc
     })
     
    }
@@ -116,7 +113,6 @@ Template.profile.helpers({
     City : function(id){
         var param = id;
         var city = Cities.findOne({"activities._id":param},{_id:0, 'name':1});
-        console.log(city);
         return city.name;
     },
     
@@ -125,7 +121,7 @@ Template.profile.helpers({
     },
     
     mailUser : function(){
-        return Meteor.user().emails[0];
+        return Meteor.user().emails[0].adress;
     }
 });
 
