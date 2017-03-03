@@ -155,31 +155,50 @@
 
                 {{/if}} {{/each}}</div>
 
+
+
+            <h2>Map</h2>
+            <div class="mapcity">
+                {{>map}}
+
+            </div>
+
+
+            <!--
+    {{> googleMap name="map" options=mapOptions}}
+    -->
         </div>
-
-
-
-       <h2>Map</h2>
-<div class="mapcity">
-    {{>map}}
-
-</div>
-
     </div>
 </template>
 
+<template name="map">
+    <div class="map-container">
+        {{> googleMap name="map" options=mapOptions}}
+    </div>
+</template>
 
 <template name="notFound">
     Template not found
 </template>
 
 <template name="profile">
-    <p>Your articles are</p>
+    <div class="row" id="profile">
+        <div class="col-md-4 col-md-offset-1" id="userInfo">
+            <h1>Your infos</h1>
+            <p>User :{{User}}</p>
+            <p>Email : {{mailUser}}</p>
+        </div>
 
-    {{#if currentUser}} {{#each Activity}}
-    <a href="/activity/{{_id}}" class="articlePreview">
-        <p>{{name}}</p>
-    </a> {{/each}} {{/if}}
+        <div class="col-md-5 col-md-offset-1">
+            <h1>Your articles</h1> {{#if currentUser}} {{#each Activity}}
+            <a href="/activity/{{_id}}" class="articlePreview">
+                <p class="nature">{{nature}} in {{City _id}}</p>
+                <h2>{{name}}</h2>
+                <!--<p>{{City _id}}</p>-->
+            </a> {{/each}} {{/if}}
+        </div>
+
+    </div>
 </template>
 
 <template name="addActivity">

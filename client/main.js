@@ -1,3 +1,7 @@
+/*Meteor.startup(function() {  
+  GoogleMaps.load();
+});*/
+
 
 Template.city.helpers({
     isEvent : function(nature){
@@ -6,7 +10,16 @@ Template.city.helpers({
     
     isPlace : function(nature){
         return nature == 'place';
-    }
+    },
+    
+    mapOptions: function() {
+        if (GoogleMaps.loaded()) {
+          return {
+            center: new google.maps.LatLng(-37.8136, 144.9631),
+            zoom: 8
+          };
+        }
+      }
 });
 
 Template.activity.events({
@@ -97,7 +110,22 @@ Template.addActivity.helpers({
 
 Template.profile.helpers({
     Activity : function(){
-        return Activities.find();
+        return Activities.find({"editor._id" : Meteor.user()._id});
+    },
+    
+    City : function(id){
+        var param = id;
+        var city = Cities.findOne({"activities._id":param},{_id:0, 'name':1});
+        console.log(city);
+        return city.name;
+    },
+    
+    User : function(){
+        return Meteor.user()._id;
+    },
+    
+    mailUser : function(){
+        return Meteor.user().emails[0];
     }
 });
 

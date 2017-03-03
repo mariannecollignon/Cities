@@ -18,3 +18,21 @@ form label{
     font-family: 'Century Gothic';
     font-weight: bold;
 }
+
+.articlePreview .nature{
+    font-family: 'Century Gothic';
+    font-size: 18px;
+}
+
+.articlePreview h2{
+    font-family: "Press Style";
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+#profile h1{
+    font-family: "Press Style";
+    text-transform: uppercase;
+    font-size: 45px;
+    text-align: center;
+}
