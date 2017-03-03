@@ -106,7 +106,15 @@ Template.profile.helpers({
         var param = id;
         var city = Cities.findOne({"activities._id":param},{_id:0, 'name':1});
         console.log(city);
-        return city;
+        return city.name;
+    },
+    
+    User : function(){
+        return Meteor.user()._id;
+    },
+    
+    mailUser : function(){
+        return Meteor.user().emails[0];
     }
 });
 
