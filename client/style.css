@@ -214,7 +214,6 @@
 */
 
 .image-block {
-    border: 3px solid white;
     background-color: black;
     padding: 0px;
     margin: 0px;
@@ -317,4 +316,8 @@
 }
 
 
-/***************** footer ****************/
+/***************** actibity ****************/
+
+#gallery img {
+    width: 300px;
+}

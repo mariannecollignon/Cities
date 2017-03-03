@@ -112,36 +112,43 @@
 <template name="addActivity">
     <h3>Write an article</h3>
 
-     <form id="insert" class="addEvent">
-        <br/> <label>In wich city is it ?</label>
+    <form id="insert" class="addEvent">
+        <br/>
+        <label>In wich city is it ?</label>
         <select>
             {{#each City}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
-        <br/> <label>What is it about ?</label>
+        <br/>
+        <label>What is it about ?</label>
         <select id="type">
             <option value="event">An event</option>
             <option value="place">A place</option>
         </select>
-        
-        
-        <br/> <label>Your title</label>
+
+
+        <br/>
+        <label>Your title</label>
         <input type="text" id="name" placeholder="title" />
-        <br/> <label>Your article</label>
-        <textarea id="description" placeholder="write your article there" ></textarea>
-        <br/><label>Url</label>
+        <br/>
+        <label>Your article</label>
+        <textarea id="description" placeholder="write your article there"></textarea>
+        <br/>
+        <label>Url</label>
         <input type="text" id="url" placeholder="url" />
-          
-        <br/> <label>Start date</label>
-        <input type="date"  id = "dateStart" placeholder="start date"/>
-        <br/><label>End date</label>
-        <input type ="date" id = "dateEnd" placeholder="end date"/>
-          
-          
-          <br/>
-          <br/>
-          <input type="submit" value="ok" />
+
+        <br/>
+        <label>Start date</label>
+        <input type="date" id="dateStart" placeholder="start date" />
+        <br/>
+        <label>End date</label>
+        <input type="date" id="dateEnd" placeholder="end date" />
+
+
+        <br/>
+        <br/>
+        <input type="submit" value="ok" />
 
     </form>
 
@@ -152,6 +159,12 @@
         {{#each pictures}}
         <img src="{{this}}" /> {{/each}}
     </div>
+
+
+
+
+
+
     <p>{{nature}}</p>
     <p>{{name}}</p>
     <p>{{editor._id}}</p>
