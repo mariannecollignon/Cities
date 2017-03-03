@@ -26,3 +26,4 @@ insecure
 twbs:bootstrap@=3.3.5
 iron:router@=1.0.12
 tomi:upload-server
+mdg:geolocation
