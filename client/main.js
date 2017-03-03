@@ -60,10 +60,19 @@ Template.article.events({
     var cityName = $("#cityName").val();
     var latitude = $("#latitude").val();
     var longtitude = $("#longtitude").val();
+    var name = $("#name").val();
+    var description = $("#description").val();
+    var url = $("#url").val();
+    var dateStart = $("#dateStart").val();
+    var dateEnd = $("#dateEnd").val();
+
+    
+    
     
     Cities.insert({
         name : cityName,lat :latitude, long : longtitude
-    });
+    })
+    
    }
 });
 
@@ -76,11 +85,13 @@ Template.addActivity.events({
     var url = $("#url").val();
     var dateStart = $("#dateStart").val();
     var dateEnd = $("#dateEnd").val();
-
+    var id = $('#id').val();
+    var nature= $("#type").val();
     
     Activities.insert({
         name : name,description :description, url : url,dateStart:dateStart,dateEnd: dateEnd
     });
+    
    }
 });
 
@@ -118,3 +129,32 @@ Template.profile.helpers({
     }
 });
 
+<<<<<<< HEAD
+=======
+Meteor.startup(function() {
+    GoogleMaps.load();
+  });
+Template.city.helpers({
+    
+        mapOptions: function () {
+        if (GoogleMaps.loaded()) {
+            var temp = Cities.findOne({"_id": Template.parentData(1)._id});
+            console.log("hello");
+            var x = temp.coordinates.long;
+            var y = temp.coordinates.lat;
+            console.log(x + ", " + y);
+            return {
+                center: new google.maps.LatLng(x, y),zoom:10
+                //center: new google.maps.LatLng(-37.8136, 144.9631),zoom:10
+            };
+        }
+    }
+  });
+
+
+Template.city.onCreated(function() {
+    GoogleMaps.ready('map', function(map) {
+      console.log("I'm ready!");
+      });
+     });
+>>>>>>> 61cbb4d74a26339a03efdcc00fa93241f5a0ea1d
