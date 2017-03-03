@@ -24,6 +24,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Press Style';
+    src: url('/fonts/PressStyle.eot');
+    src: url('/fonts/PressStyle.eot?#iefix') format('embedded-opentype'), url('/fonts/PressStyle.woff') format('woff'), url('/fonts/PressStyle.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body {
+    font-family: 'Century Gothic';
+}
+
 
 /***************************** NAVIGATION ******************************/
 
@@ -97,6 +109,7 @@
 .div2 {
     position: relative;
     z-index: 1;
+    top: -72px;
 }
 
 
@@ -124,19 +137,7 @@
 /********************** MAIN BACKGROUND ******************/
 
 #mainbackground {
-    margin-top: -4%;
-}
-
-.btn-danger {
-    font-family: 'BigNoodleTitling';
-    color: white;
-    font-size: 25px;
-    padding: 10px 20px;
-}
-
-.btn-danger a {
-    text-decoration: none;
-    color: white;
+    margin-top: -6%;
 }
 
 
@@ -386,4 +387,57 @@
 #comdate {
     text-align: right;
     font-style: italic;
+}
+
+
+/******************** cities ********************/
+
+#cityList1 {
+    padding-top: 15px;
+    max-width: 99vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-block1 {
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    width: 958px !important;
+    height: 440px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: 'Press Style';
+    text-transform: uppercase;
+    font-size: 59px;
+    text-align: center;
+}
+
+#citiesp {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: century gothic;
+    text-align: center;
+}
+
+
+/********************city***************/
+
+#catspart1txt {
+    background: #a52d2d;
+    color: #f2dcd6;
+    font-family: century gothic;
+    height: 105px;
+    overflow: auto;
+    padding: 5px;
+    text-align: justify;
+    width: 317px;
 }
