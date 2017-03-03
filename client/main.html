@@ -94,19 +94,13 @@
 
         <p>Map</p>
 
-        {{>map}}
-
-        <!--
-    {{> googleMap name="map" options=mapOptions}}
-    -->
-    </div>
-</template>
-
-<template name="map">
-    <div class="map-container">
+        <div class="map-container">
         {{> googleMap name="map" options=mapOptions}}
+        </div>
+
     </div>
 </template>
+
 
 <template name="notFound">
     Template not found
