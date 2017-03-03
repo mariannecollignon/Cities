@@ -24,6 +24,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Press Style';
+    src: url('/fonts/PressStyle.eot');
+    src: url('/fonts/PressStyle.eot?#iefix') format('embedded-opentype'), url('/fonts/PressStyle.woff') format('woff'), url('/fonts/PressStyle.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .body {
     font-family: 'Century Gothic';
 }
