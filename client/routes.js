@@ -9,8 +9,6 @@ Router.route(
         }
 );
 
-
-
 Router.route('city/:id', {
     template:'city',
     data: function () {
@@ -46,4 +44,7 @@ Router.route('addActivity', function () {
     this.render('addActivity');          
     });
 
+Router.route('charts', function () {
+    this.render('charts');          
+    });
 
