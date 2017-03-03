@@ -132,6 +132,7 @@
 
 
 
+<<<<<<< HEAD
                         <div class="hovereffect">
                             <div class="image-block" style="background: url({{act.picture}}) no-repeat center top;background-size:cover;">
                                 <div class="overlay">
@@ -161,19 +162,15 @@
         <h2>Map</h2>
         <div class="mapcity">
             {{>map}}
+=======
+        <div class="map-container">
+        {{> googleMap name="map" options=mapOptions}}
+>>>>>>> de4e1491be16e39505bc42de9208056205c26e32
         </div>
 
-        <!--
-    {{> googleMap name="map" options=mapOptions}}
-    -->
     </div>
 </template>
 
-<template name="map">
-    <div class="map-container">
-        {{> googleMap name="map" options=mapOptions}}
-    </div>
-</template>
 
 <template name="notFound">
     Template not found
