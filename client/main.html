@@ -104,11 +104,15 @@
 </template>
 
 <template name="profile">
+    <p>User : </p>
+    <p>Email : {{currentUser.mail}}</p>
+    
     <p>Your articles are</p>
 
     {{#if currentUser}} {{#each Activity}}
     <a href="/activity/{{_id}}" class="articlePreview">
         <p>{{name}}</p>
+        <p>{{#City _id}}{{name}}{{/City}}</p>
     </a> {{/each}} {{/if}}
 </template>
 
