@@ -85,6 +85,7 @@
 
     <p>Map</p>
 
+{{>map}}
 
     <!--
     {{> googleMap name="map" options=mapOptions}}
@@ -93,7 +94,9 @@
 </template>
 
 <template name="map">
+  <div class="map-container">
     {{> googleMap name="map" options=mapOptions}}
+  </div>
 </template>
 
 <template name="notFound">
